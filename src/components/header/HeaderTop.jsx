@@ -33,6 +33,11 @@ export default function HeaderTop({ hamburger }) {
                 <Link to='/'>Track order</Link>
                 <Link to='/'>Blog</Link>
                 <Link to='/'>Contacts</Link>
+                <p className='flex items-center cursor-pointer gap-1'>
+                    <img src={images.usa} className='bg-contain w-5 h-3' />
+                    <span>ENG / ${" "}</span>
+                    <IoIosArrowDown />
+                </p>
                 <div className='flex items-center gap-1'>
                     <button>Log in</button>/
                     <button>Register</button>
