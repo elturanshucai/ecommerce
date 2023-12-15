@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: 0;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(221, 221, 221);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(46, 46, 46);
+    border-radius: 4px;
 }

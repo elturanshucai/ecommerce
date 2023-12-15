@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getHeroImages } from '../../services/homeServices'
+import { getHeroImages } from '../../../../services/homeServices'
 import LeftArrow from './LeftArrow'
 import RightArrow from './RightArrow'
 import HeroBottom from './HeroBottom'
@@ -29,6 +29,7 @@ export default function Hero() {
                             <button
                                 className={`w-20 pb-2 border-b-2 ${index === activeIndex ? 'border-black' : 'border-gray-400'} text-start font-bold transition-colors duration-300`}
                                 onClick={() => handleChangeImage(index)}
+                                key={index}
                             >
                                 0{index + 1}
                             </button>
@@ -38,7 +39,7 @@ export default function Hero() {
                 <LeftArrow setActiveIndex={setActiveIndex} activeIndex={activeIndex} />
                 <RightArrow activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
             </section>
-            <HeroBottom/>
+            <HeroBottom />
         </>
     )
 }
