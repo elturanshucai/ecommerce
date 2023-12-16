@@ -10,6 +10,11 @@ import arrival3 from './assets/newArrivals/image3.png'
 import arrival4 from './assets/newArrivals/image4.png'
 import arrival5 from './assets/newArrivals/image5.png'
 import arrival6 from './assets/newArrivals/image6.png'
+import dealWeek from './assets/newArrivals/dealWeek.png'
+import forNewEmail from './assets/newArrivals/forNewEmail.png'
+import newColl from './assets/newArrivals/newColl.png'
+import summerColl from './assets/newArrivals/summerColl.png'
+
 const images = {
     usa,
     logo,
@@ -25,7 +30,11 @@ export const newArrivalImages = {
     arrival3,
     arrival4,
     arrival5,
-    arrival6
+    arrival6,
+    dealWeek,
+    forNewEmail,
+    newColl,
+    summerColl
 }
 
 export default images;

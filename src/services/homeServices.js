@@ -102,3 +102,14 @@ export const getNewArrivals = (page) => {
 
     return newData;
 }
+
+export const getNewnessData = () => {
+    let data = [
+        newArrivalImages.summerColl,
+        newArrivalImages.dealWeek,
+        newArrivalImages.newColl,
+        newArrivalImages.forNewEmail
+    ]
+
+    return data;
+}
