@@ -1,4 +1,4 @@
-import images, { newArrivalImages } from "../images"
+import images, { newArrivalImages, popularCategoryImages } from "../images"
 
 export const getHeroImages = () => {
     let array = [
@@ -109,6 +109,43 @@ export const getNewnessData = () => {
         newArrivalImages.dealWeek,
         newArrivalImages.newColl,
         newArrivalImages.forNewEmail
+    ]
+
+    return data;
+}
+
+export const getPopularCategories = () => {
+    let data = [
+        {
+            id: 1,
+            photo: popularCategoryImages.tops,
+            title: "Tops"
+        },
+        {
+            id: 2,
+            photo: popularCategoryImages.tshirts,
+            title: "T-shirts"
+        },
+        {
+            id: 3,
+            photo: popularCategoryImages.caps,
+            title: "Caps"
+        },
+        {
+            id: 4,
+            photo: popularCategoryImages.sandals,
+            title: "Sandals"
+        },
+        {
+            id: 5,
+            photo: popularCategoryImages.jackets,
+            title: "Jackets"
+        },
+        {
+            id: 6,
+            photo: popularCategoryImages.coats,
+            title: "Coats"
+        }
     ]
 
     return data;

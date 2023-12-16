@@ -3,6 +3,7 @@ import Header from '../../components/header/Header'
 import Hero from './container/hero/Hero'
 import NewArrivals from './container/newArrivals/NewArrivals'
 import Newness from './container/newness/Newness'
+import PopularCategories from './container/popularCaregories/PopularCategories'
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero />
             <NewArrivals />
             <Newness />
+            <PopularCategories />
         </>
     )
 }

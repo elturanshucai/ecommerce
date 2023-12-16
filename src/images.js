@@ -14,6 +14,12 @@ import dealWeek from './assets/newArrivals/dealWeek.png'
 import forNewEmail from './assets/newArrivals/forNewEmail.png'
 import newColl from './assets/newArrivals/newColl.png'
 import summerColl from './assets/newArrivals/summerColl.png'
+import caps from './assets/popularCategories/caps.png'
+import coats from './assets/popularCategories/coats.png'
+import jackets from './assets/popularCategories/jackets.png'
+import sandals from './assets/popularCategories/sandals.png'
+import tops from './assets/popularCategories/tops.png'
+import tshirts from './assets/popularCategories/tshirts.png'
 
 const images = {
     usa,
@@ -35,6 +41,15 @@ export const newArrivalImages = {
     forNewEmail,
     newColl,
     summerColl
+}
+
+export const popularCategoryImages = {
+    caps,
+    coats,
+    jackets,
+    sandals,
+    tops,
+    tshirts
 }
 
 export default images;
