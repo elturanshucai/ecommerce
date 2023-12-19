@@ -158,6 +158,52 @@ export const productSlice = createSlice({
                 price: 25.60,
                 type: 'arrival'
             },
+            {
+                id: 18,
+                rating: 4,
+                isLiked: false,
+                photo: images.discount1,
+                title: 'Canta',
+                price: 60,
+                discountPercent: 50,
+                type: 'discount',
+                colors: ['brown']
+            },
+            {
+                id: 19,
+                rating: null,
+                isLiked: false,
+                photo: images.discount2,
+                title: 'Salvar',
+                price: 48,
+                discountPercent: 20,
+                type: 'discount',
+                colors: ['blue', 'black'],
+                sizes: ['30', '32', '34', '36']
+            },
+            {
+                id: 20,
+                rating: 5,
+                isLiked: false,
+                photo: images.discount3,
+                title: 'Ayaqqabi',
+                price: 85,
+                discountPercent: 30,
+                type: 'discount',
+                colors: ['red', 'black'],
+                sizes: ['36', '37', '38', '39', '40', '41']
+            },
+            {
+                id: 21,
+                rating: 4,
+                isLiked: false,
+                photo: images.discount1,
+                title: 'Canta 2',
+                price: 43,
+                discountPercent: 15,
+                type: 'discount',
+                colors: ['red']
+            },
         ]
     },
     reducers: {

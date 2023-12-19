@@ -39,7 +39,7 @@ export default function Trending() {
     }, [activePage, productDatabase])
     return (
         <section className='bg-gray-300 py-20'>
-            <div className='w-4/5 sm:w-3/4 md:w-2/3 mx-auto'>
+            <div className='w-4/5 sm:w-3/4 md:w-2/3 mx-auto mb-20'>
                 <div className='flex items-center justify-between mb-14'>
                     <h1 className='font-bold text-2xl'>Trending now</h1>
                     <div className='flex items-center gap-3'>
@@ -69,6 +69,11 @@ export default function Trending() {
                         />
                     ))}
                 </div>
+            </div>
+            <div className='w-fit mx-auto'>
+                <button className='border-2 font-semibold rounded-md border-primary text-primary text-center h-12 px-10'>
+                    Explore top sales
+                </button>
             </div>
         </section>
     )

@@ -23,6 +23,9 @@ import tshirts from './assets/popularCategories/tshirts.png'
 import trend1 from './assets/trending/trend1.png'
 import trend2 from './assets/trending/trend2.png'
 import trend3 from './assets/trending/trend3.png'
+import discount1 from './assets/discount/discount1.png'
+import discount2 from './assets/discount/discount2.png'
+import discount3 from './assets/discount/discount3.png'
 
 const images = {
     usa,
@@ -49,15 +52,10 @@ const images = {
     tshirts,
     trend1,
     trend2,
-    trend3
-}
-
-export const popularCategoryImages = {
-
-}
-
-export const trendingNowImages = {
-
+    trend3,
+    discount1,
+    discount2,
+    discount3
 }
 
 export default images;
