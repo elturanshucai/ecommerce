@@ -1,4 +1,5 @@
-import images, { newArrivalImages, popularCategoryImages } from "../images"
+import { useSelector } from "react-redux";
+import images from "../images"
 
 export const getHeroImages = () => {
     let array = [
@@ -10,105 +11,12 @@ export const getHeroImages = () => {
     return array;
 }
 
-export const getNewArrivals = (page) => {
-    let startIndex = 0 + page * 6
-    let lastIndex = startIndex + 6
-    const data = [
-        {
-            id: 1,
-            rating: 5,
-            isLiked: false,
-            photo: newArrivalImages.arrival1,
-            title: 'Lorem ipsum',
-            price: 18.15
-        },
-        {
-            id: 2,
-            rating: null,
-            isLiked: false,
-            photo: newArrivalImages.arrival2,
-            title: 'Lorem ipsum',
-            price: 18.15
-        },
-        {
-            id: 3,
-            rating: 4,
-            isLiked: true,
-            photo: newArrivalImages.arrival3,
-            title: 'Lorem ipsum',
-            price: 30
-        },
-        {
-            id: 4,
-            rating: 3,
-            isLiked: false,
-            photo: newArrivalImages.arrival4,
-            title: 'Lorem ipsum',
-            price: 25.60
-        },
-        {
-            id: 5,
-            rating: null,
-            isLiked: false,
-            photo: newArrivalImages.arrival5,
-            title: 'Lorem ipsum',
-            price: 18.15
-        },
-        {
-            id: 6,
-            rating: 5,
-            isLiked: false,
-            photo: newArrivalImages.arrival6,
-            title: 'Lorem ipsum',
-            price: 6.90
-        },
-        {
-            id: 7,
-            rating: 5,
-            isLiked: false,
-            photo: newArrivalImages.arrival1,
-            title: 'Lorem ipsum',
-            price: 18.15
-        },
-        {
-            id: 8,
-            rating: 1,
-            isLiked: false,
-            photo: newArrivalImages.arrival3,
-            title: 'Lorem ipsum',
-            price: 8
-        },
-        {
-            id: 9,
-            rating: 5,
-            isLiked: false,
-            photo: newArrivalImages.arrival6,
-            title: 'Lorem ipsum',
-            price: 15.05
-        },
-        {
-            id: 10,
-            rating: 4,
-            isLiked: true,
-            photo: newArrivalImages.arrival4,
-            title: 'Lorem ipsum',
-            price: 18
-        },
-    ]
-
-    let newData = {}
-    newData.data = data.slice(startIndex, lastIndex)
-    newData.totalLength = data.length
-
-    return newData;
-}
-
 export const getNewnessData = () => {
     let data = [
-        newArrivalImages.summerColl,
-        newArrivalImages.dealWeek,
-        newArrivalImages.newColl,
-        newArrivalImages.forNewEmail
+        images.summerColl,
+        images.dealWeek,
+        images.newColl,
+        images.forNewEmail
     ]
 
     return data;
@@ -118,35 +26,47 @@ export const getPopularCategories = () => {
     let data = [
         {
             id: 1,
-            photo: popularCategoryImages.tops,
+            photo: images.tops,
             title: "Tops"
         },
         {
             id: 2,
-            photo: popularCategoryImages.tshirts,
+            photo: images.tshirts,
             title: "T-shirts"
         },
         {
             id: 3,
-            photo: popularCategoryImages.caps,
+            photo: images.caps,
             title: "Caps"
         },
         {
             id: 4,
-            photo: popularCategoryImages.sandals,
+            photo: images.sandals,
             title: "Sandals"
         },
         {
             id: 5,
-            photo: popularCategoryImages.jackets,
+            photo: images.jackets,
             title: "Jackets"
         },
         {
             id: 6,
-            photo: popularCategoryImages.coats,
+            photo: images.coats,
             title: "Coats"
         }
     ]
 
     return data;
+}
+
+export const likeProductItem = (id, component) => {
+    let productItem = {}
+    switch (component) {
+        case 'newArrivals':
+            break
+        case 'trendingNow':
+            break
+        default:
+            break;
+    }
 }

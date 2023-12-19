@@ -20,6 +20,9 @@ import jackets from './assets/popularCategories/jackets.png'
 import sandals from './assets/popularCategories/sandals.png'
 import tops from './assets/popularCategories/tops.png'
 import tshirts from './assets/popularCategories/tshirts.png'
+import trend1 from './assets/trending/trend1.png'
+import trend2 from './assets/trending/trend2.png'
+import trend3 from './assets/trending/trend3.png'
 
 const images = {
     usa,
@@ -28,9 +31,6 @@ const images = {
     heroKid,
     heroMan,
     heroWoman,
-}
-
-export const newArrivalImages = {
     arrival1,
     arrival2,
     arrival3,
@@ -40,16 +40,24 @@ export const newArrivalImages = {
     dealWeek,
     forNewEmail,
     newColl,
-    summerColl
-}
-
-export const popularCategoryImages = {
+    summerColl,
     caps,
     coats,
     jackets,
     sandals,
     tops,
-    tshirts
+    tshirts,
+    trend1,
+    trend2,
+    trend3
+}
+
+export const popularCategoryImages = {
+
+}
+
+export const trendingNowImages = {
+
 }
 
 export default images;

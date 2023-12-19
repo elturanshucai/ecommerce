@@ -1,5 +1,5 @@
 import React from 'react'
-import { newArrivalImages } from '../../../../images'
+import images from '../../../../images'
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Newness() {
@@ -12,7 +12,7 @@ export default function Newness() {
                     <button className='py-3 px-8 text-primary border-2 font-semibold border-primary rounded-md'>Explore new prices</button>
                 </div>
                 <img
-                    src={newArrivalImages.summerColl}
+                    src={images.summerColl}
                     alt='image'
                     className='w-full h-full object-cover lg:object-none'
                 />
@@ -45,7 +45,7 @@ export default function Newness() {
                     </div>
                 </div>
                 <img
-                    src={newArrivalImages.dealWeek}
+                    src={images.dealWeek}
                     alt='image'
                     className='w-full h-full object-cover sm:object-none'
                 />
@@ -60,7 +60,7 @@ export default function Newness() {
                     </button>
                 </div>
                 <img
-                    src={newArrivalImages.newColl}
+                    src={images.newColl}
                     alt='image'
                     className='w-full h-full object-cover sm:object-none'
                 />
@@ -84,7 +84,7 @@ export default function Newness() {
                     <p className='text-gray-800 w-2/3'>*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.</p>
                 </div>
                 <img
-                    src={newArrivalImages.forNewEmail}
+                    src={images.forNewEmail}
                     alt="image"
                     className='absolute bottom-0 right-0 h-[300px] z-0 object-cover sm:object-none'
                 />
