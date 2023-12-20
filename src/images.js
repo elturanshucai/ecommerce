@@ -29,6 +29,10 @@ import discount3 from './assets/discount/discount3.png'
 import getapp1 from './assets/getapp/getapp1.png'
 import getappand from './assets/getapp/getappand.png'
 import getappios from './assets/getapp/getappios.png'
+import icDelivery from './assets/about/ic-delivery.svg'
+import icCallCenter from './assets/about/ic-call-center.svg'
+import icCreditCard from './assets/about/ic-credit-card.svg'
+import icShield from './assets/about/ic-shield.svg'
 
 const images = {
     usa,
@@ -61,7 +65,11 @@ const images = {
     discount3,
     getapp1,
     getappios,
-    getappand
+    getappand,
+    icDelivery,
+    icCallCenter,
+    icCreditCard,
+    icShield
 }
 
 export default images;

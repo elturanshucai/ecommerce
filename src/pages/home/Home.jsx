@@ -7,6 +7,7 @@ import PopularCategories from './container/popularCaregories/PopularCategories'
 import Trending from './container/trending/Trending'
 import DiscountedProducts from './container/discounted/DiscountedProducts'
 import GetApp from './container/getAppSection/GetApp'
+import About from './container/about/About'
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
             <Trending />
             <DiscountedProducts />
             <GetApp />
+            <About />
         </>
     )
 }
