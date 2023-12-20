@@ -33,6 +33,9 @@ import icDelivery from './assets/about/ic-delivery.svg'
 import icCallCenter from './assets/about/ic-call-center.svg'
 import icCreditCard from './assets/about/ic-credit-card.svg'
 import icShield from './assets/about/ic-shield.svg'
+import social1 from './assets/about/social1.png'
+import social2 from './assets/about/social2.png'
+import social3 from './assets/about/social3.png'
 
 const images = {
     usa,
@@ -69,7 +72,10 @@ const images = {
     icDelivery,
     icCallCenter,
     icCreditCard,
-    icShield
+    icShield,
+    social1,
+    social2,
+    social3
 }
 
 export default images;
