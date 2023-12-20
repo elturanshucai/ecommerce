@@ -38,7 +38,7 @@ export default function DiscountedProducts() {
         getDiscountedData(activePage)
     }, [activePage, productDatabase])
     return (
-        <section className='py-20 bg-gray-100'>
+        <section className='py-20 bg-gray-100 z-0 pb-40'>
             <div className='w-4/5 md:w-3/4 mx-auto'>
                 <div className='flex items-center justify-between mb-14'>
                     <h1 className='font-bold text-2xl'>Sale up to 70%</h1>

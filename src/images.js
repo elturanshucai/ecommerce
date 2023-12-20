@@ -26,6 +26,9 @@ import trend3 from './assets/trending/trend3.png'
 import discount1 from './assets/discount/discount1.png'
 import discount2 from './assets/discount/discount2.png'
 import discount3 from './assets/discount/discount3.png'
+import getapp1 from './assets/getapp/getapp1.png'
+import getappand from './assets/getapp/getappand.png'
+import getappios from './assets/getapp/getappios.png'
 
 const images = {
     usa,
@@ -55,7 +58,10 @@ const images = {
     trend3,
     discount1,
     discount2,
-    discount3
+    discount3,
+    getapp1,
+    getappios,
+    getappand
 }
 
 export default images;

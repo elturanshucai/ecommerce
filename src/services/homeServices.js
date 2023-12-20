@@ -58,15 +58,3 @@ export const getPopularCategories = () => {
 
     return data;
 }
-
-export const likeProductItem = (id, component) => {
-    let productItem = {}
-    switch (component) {
-        case 'newArrivals':
-            break
-        case 'trendingNow':
-            break
-        default:
-            break;
-    }
-}
