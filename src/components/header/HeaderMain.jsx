@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 export default function HeaderMain() {
     const { productDatabase } = useSelector(state => state.product)
+    const { userBasket } = useSelector(state => state.user)
     const [likedProducts, setLikedProducts] = useState([])
     useEffect(() => {
         let array = productDatabase.filter(item => item.isLiked === true)
@@ -45,7 +46,7 @@ export default function HeaderMain() {
                     <div className='flex items-center gap-2 cursor-pointer'>
                         <MdOutlineShoppingCart />
                         <span className='bg-emerald-500 text-white h-full px-2 rounded-lg'>
-                            4
+                            {userBasket.length}
                         </span>
                     </div>
                 </div>

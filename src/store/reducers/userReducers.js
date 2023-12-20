@@ -14,11 +14,10 @@ export const userSlice = createSlice({
             state.currentUser = null
         },
         addBasketProduct: (state, { payload }) => {
-            let product = state.userBasket.filter(item => item.id == payload.id)[0]
-            if (!product) state.userBasket = [...state.userBasket, payload]
+            state.userBasket = [...state.userBasket, payload]
         },
         removeBasketProduct: (state, { payload }) => {
-            state.userBasket = state.userBasket.filter(item => item.id != payload.id)
+            state.userBasket = state.userBasket.filter((_, index) => index != payload)
         }
     }
 })

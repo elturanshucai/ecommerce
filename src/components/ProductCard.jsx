@@ -5,11 +5,14 @@ import { IoHeart } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { likeProduct } from '../store/reducers/productReducers';
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { addBasketProduct } from '../store/reducers/userReducers';
 
 export default function ProductCard({ index, item, className, imageClass = 'max-w-[285px]', type }) {
     const dispatch = useDispatch()
     const [selectedColor, setSelectedColor] = useState()
     const [selectedSize, setSelectedSize] = useState()
+    const [activeImage, setActiveImage] = useState(0)
     const [disabled, setDisabled] = useState(false)
     const ratingRender = (score, index) => {
         return <>
@@ -34,6 +37,38 @@ export default function ProductCard({ index, item, className, imageClass = 'max-
         else if (item.sizes && item.colors) {
             (selectedColor && selectedSize) ? setDisabled(false) : setDisabled(true)
         }
+    }
+
+    const getNextImage = () => {
+        if (activeImage === item?.photo.length - 1) {
+            setActiveImage(0)
+        } else {
+            setActiveImage(activeImage + 1)
+        }
+    }
+
+    const getPrevImage = () => {
+        if (activeImage === 0) {
+            setActiveImage(item?.photo.length - 1)
+        } else {
+            setActiveImage(activeImage - 1)
+        }
+    }
+
+    const addToCart = () => {
+        let addedProduct = {}
+        addedProduct.id = item.id
+        addedProduct.rating = item.rating
+        addedProduct.isLiked = item.isLiked
+        addedProduct.photo = item.photo
+        addedProduct.title = item.title
+        addedProduct.price = item.price
+        addedProduct.discountPercent = item.discountPercent
+        addedProduct.type = item.type
+        addedProduct.color = selectedColor
+        addedProduct.size = selectedSize
+        addedProduct.count = 1
+        dispatch(addBasketProduct(addedProduct))
     }
 
     useEffect(() => {
@@ -70,7 +105,13 @@ export default function ProductCard({ index, item, className, imageClass = 'max-
                     <IoMdHeartEmpty />
                 }
             </button>
-            <img src={item.photo} alt="product" className={`max-h-80 h-80 w-full rounded-md ${imageClass}`} />
+            {type === 'discount' && item?.photo.length > 1 &&
+                <div className='absolute flex justify-between w-full bg-transparent h-20 items-center px-2 top-40 text-xl'>
+                    <IoIosArrowBack className='cursor-pointer' onClick={getPrevImage} />
+                    <IoIosArrowForward className='cursor-pointer' onClick={getNextImage} />
+                </div>
+            }
+            <img src={type === 'discount' ? item.photo[activeImage] : item.photo} alt="product" className={`max-h-80 h-80 w-full rounded-md ${imageClass}`} />
             <div className='p-4 bg-transparent'>
                 <p className='text-gray-800 text-lg truncate'>{item.title}</p>
 
@@ -112,6 +153,7 @@ export default function ProductCard({ index, item, className, imageClass = 'max-
                         </div>
 
                         <button
+                            onClick={addToCart}
                             disabled={disabled}
                             className='group-hover:flex hidden items-center h-11 justify-center text-white text-center w-full bg-primary rounded-md disabled:opacity-75'>
                             <MdOutlineShoppingCart /> Add to cart
