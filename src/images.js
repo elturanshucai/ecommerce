@@ -36,6 +36,8 @@ import icShield from './assets/about/ic-shield.svg'
 import social1 from './assets/about/social1.png'
 import social2 from './assets/about/social2.png'
 import social3 from './assets/about/social3.png'
+import blog1 from './assets/about/blog1.png'
+import blog2 from './assets/about/blog2.png'
 
 const images = {
     usa,
@@ -75,7 +77,9 @@ const images = {
     icShield,
     social1,
     social2,
-    social3
+    social3,
+    blog1,
+    blog2
 }
 
 export default images;
