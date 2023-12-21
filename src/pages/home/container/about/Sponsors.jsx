@@ -11,7 +11,7 @@ export default function Sponsors() {
         images.brandLogo6
     ]
     return (
-        <section className='grid grid-cols-6 mb-28'>
+        <section className='grid grid-cols-6'>
             {sponsors.map((sponsor, index) => (
                 <div
                     className='col-span-3 gap-4 sm:col-span-2 lg:col-span-1'

@@ -8,6 +8,7 @@ import Trending from './container/trending/Trending'
 import DiscountedProducts from './container/discounted/DiscountedProducts'
 import GetApp from './container/getAppSection/GetApp'
 import About from './container/about/About'
+import Subscribe from './container/subscribe/Subscribe'
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             <DiscountedProducts />
             <GetApp />
             <About />
+            <Subscribe />
         </>
     )
 }
