@@ -2,6 +2,7 @@ import React from 'react'
 import Services from './Services'
 import Social from './Social'
 import BlogSection from './BlogSection'
+import Sponsors from './Sponsors'
 
 export default function About() {
     return (
@@ -9,6 +10,7 @@ export default function About() {
             <Services />
             <Social />
             <BlogSection />
+            <Sponsors/>
         </section>
     )
 }

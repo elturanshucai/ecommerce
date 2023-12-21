@@ -5,7 +5,7 @@ import { FaRegComments } from "react-icons/fa";
 
 export default function BlogSection() {
     return (
-        <section className='mt-44 mb-20'>
+        <section className='mt-44 mb-28'>
             <div className='flex justify-between items-center mb-14'>
                 <h1 className='font-extrabold text-xl sm:text-5xl text-gray-900'>Fashion blog</h1>
                 <button className='px-2 sm:px-8 py-2 rounded-md border border-primary text-primary font-bold'>View blog</button>

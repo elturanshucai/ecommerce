@@ -38,6 +38,12 @@ import social2 from './assets/about/social2.png'
 import social3 from './assets/about/social3.png'
 import blog1 from './assets/about/blog1.png'
 import blog2 from './assets/about/blog2.png'
+import brandLogo1 from './assets/about/brand-logo.png'
+import brandLogo2 from './assets/about/brand-logo1.png'
+import brandLogo3 from './assets/about/brand-logo2.png'
+import brandLogo4 from './assets/about/brand-logo3.png'
+import brandLogo5 from './assets/about/brand-logo4.png'
+import brandLogo6 from './assets/about/brand-logo5.png'
 
 const images = {
     usa,
@@ -79,7 +85,13 @@ const images = {
     social2,
     social3,
     blog1,
-    blog2
+    blog2,
+    brandLogo1,
+    brandLogo2,
+    brandLogo3,
+    brandLogo4,
+    brandLogo5,
+    brandLogo6
 }
 
 export default images;
