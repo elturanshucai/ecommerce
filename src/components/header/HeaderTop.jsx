@@ -28,7 +28,7 @@ export default function HeaderTop({ hamburger }) {
                     <button>Register</button>
                 </div>
             </div>
-            <div className={`absolute top-[45px] right-0 bg-gray-900 ${hamburger ? 'flex' : 'hidden'} sm:hidden flex-col gap-3 p-3 rounded-sm`}>
+            <div className={`absolute z-50 top-[45px] right-0 bg-gray-900 ${hamburger ? 'flex' : 'hidden'} sm:hidden flex-col gap-3 p-3 rounded-sm`}>
                 <Link to='/'>Delivery & returns</Link>
                 <Link to='/'>Track order</Link>
                 <Link to='/'>Blog</Link>

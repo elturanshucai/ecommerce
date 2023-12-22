@@ -45,6 +45,7 @@ import brandLogo4 from './assets/about/brand-logo3.png'
 import brandLogo5 from './assets/about/brand-logo4.png'
 import brandLogo6 from './assets/about/brand-logo5.png'
 import subscribeImg from './assets/subscribeImg.png'
+import megaMenuImg from './assets/megaMenu.png'
 
 const images = {
     usa,
@@ -93,7 +94,8 @@ const images = {
     brandLogo4,
     brandLogo5,
     brandLogo6,
-    subscribeImg
+    subscribeImg,
+    megaMenuImg
 }
 
 export default images;

@@ -6,7 +6,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useSelector } from 'react-redux';
 
-export default function HeaderMain() {
+export default function HeaderMain({ setMegaMenu }) {
     const { productDatabase } = useSelector(state => state.product)
     const { userBasket } = useSelector(state => state.user)
     const [likedProducts, setLikedProducts] = useState([])
@@ -15,17 +15,17 @@ export default function HeaderMain() {
         setLikedProducts(array)
     }, [productDatabase])
     return (
-        <div className='lg:px-40 px-5 text-gray-900 flex flex-col gap-y-4 gap-x-10 justify-between items-center py-8 lg:flex-row z-10'>
+        <div className='lg:px-40 px-5 text-gray-900 flex flex-col gap-y-4 gap-x-10 bg-white justify-between items-center py-8 lg:flex-row z-10'>
             <div className='flex gap-10 sm:flex-row flex-col w-fit sm:w-2/3'>
                 <Link to="/">
                     <img src={images.logo} alt='logo' className='min-w-fit mx-auto' />
                 </Link>
                 <ul className='flex flex-wrap sm:flex-nowrap font-semibold gap-4'>
-                    <Link to='/'>Women</Link>
-                    <Link to='/'>Men</Link>
-                    <Link to='/'>Girls</Link>
-                    <Link to='/'>Boys</Link>
-                    <Link to='/' className='text-red-500'>Sale</Link>
+                    <button onClick={() => setMegaMenu(true)}>Women</button>
+                    <button onClick={() => setMegaMenu(true)}>Men</button>
+                    <button onClick={() => setMegaMenu(true)}>Girls</button>
+                    <button onClick={() => setMegaMenu(true)}>Boys</button>
+                    <button onClick={() => setMegaMenu(true)} className='text-red-500'>Sale</button>
                 </ul>
             </div>
             <div className='flex gap-3 sm:gap-12 items-center w-fit sm:w-1/3'>
