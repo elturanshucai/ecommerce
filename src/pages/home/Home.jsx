@@ -9,6 +9,7 @@ import DiscountedProducts from './container/discounted/DiscountedProducts'
 import GetApp from './container/getAppSection/GetApp'
 import About from './container/about/About'
 import Subscribe from './container/subscribe/Subscribe'
+import Footer from '../../components/footer/Footer'
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
             <GetApp />
             <About />
             <Subscribe />
+            <Footer />
         </>
     )
 }
