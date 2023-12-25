@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/header/Header'
 import Hero from './container/hero/Hero'
 import NewArrivals from './container/newArrivals/NewArrivals'
 import Newness from './container/newness/Newness'
@@ -9,12 +8,11 @@ import DiscountedProducts from './container/discounted/DiscountedProducts'
 import GetApp from './container/getAppSection/GetApp'
 import About from './container/about/About'
 import Subscribe from './container/subscribe/Subscribe'
-import Footer from '../../components/footer/Footer'
+import MainLayout from '../../components/MainLayout'
 
 export default function Home() {
     return (
-        <>
-            <Header />
+        <MainLayout>
             <Hero />
             <NewArrivals />
             <Newness />
@@ -24,7 +22,6 @@ export default function Home() {
             <GetApp />
             <About />
             <Subscribe />
-            <Footer />
-        </>
+        </MainLayout>
     )
 }

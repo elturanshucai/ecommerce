@@ -10,6 +10,11 @@ export default function HeaderMain({ setMegaMenu }) {
     const { productDatabase } = useSelector(state => state.product)
     const { userBasket } = useSelector(state => state.user)
     const [likedProducts, setLikedProducts] = useState([])
+    const [activeMenu, setActiveMenu] = useState(false)
+    const handleClick = (e) => {
+        setActiveMenu(e.target.id)
+        setMegaMenu(true)
+    }
     useEffect(() => {
         let array = productDatabase.filter(item => item.isLiked === true)
         setLikedProducts(array)
@@ -21,11 +26,11 @@ export default function HeaderMain({ setMegaMenu }) {
                     <img src={images.logo} alt='logo' className='min-w-fit mx-auto' />
                 </Link>
                 <ul className='flex flex-wrap sm:flex-nowrap font-semibold gap-4'>
-                    <button onClick={() => setMegaMenu(true)}>Women</button>
-                    <button onClick={() => setMegaMenu(true)}>Men</button>
-                    <button onClick={() => setMegaMenu(true)}>Girls</button>
-                    <button onClick={() => setMegaMenu(true)}>Boys</button>
-                    <button onClick={() => setMegaMenu(true)} className='text-red-500'>Sale</button>
+                    <button onClick={handleClick} id='women' className={`${activeMenu === 'women' && 'text-primary'}`}>Women</button>
+                    <button onClick={handleClick} id='men' className={`${activeMenu === 'men' && 'text-primary'}`}>Men</button>
+                    <button onClick={handleClick} id='girls' className={`${activeMenu === 'girls' && 'text-primary'}`}>Girls</button>
+                    <button onClick={handleClick} id='boys' className={`${activeMenu === 'boys' && 'text-primary'}`}>Boys</button>
+                    <button onClick={handleClick} id='sale' className='text-red-500'>Sale</button>
                 </ul>
             </div>
             <div className='flex gap-3 sm:gap-12 items-center w-fit sm:w-1/3'>
