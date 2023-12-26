@@ -7,7 +7,8 @@ export default function Pagination({
     setSorting,
     defaultShow,
     activePage,
-    setActivePage
+    setActivePage,
+    currentSorting
 }) {
     const [pageCount, setPageCount] = useState(1)
 
@@ -33,26 +34,28 @@ export default function Pagination({
 
     return (
         <div>
-            <div className='flex gap-14'>
-                <div>
-                    <label className='font-bold'>Sort by</label>
-                    <select
-                        onChange={e => setSorting(e.target.value)}
-                        className='p-2 border rounded-sm ml-3 outline-none'>
-                        <option value="priceplus">Price to low</option>
-                        <option value="priceminus">Price to high</option>
-                    </select>
-                </div>
-                <div>
-                    <label className='font-bold'>Show</label>
-                    <input
-                        type="number"
-                        min={1}
-                        className='text-center p-2 border rounded-sm ml-3 outline-none w-20'
-                        onChange={e => setShowCount(e.target.value)}
-                        value={defaultShow}
-                        onWheel={e => e.target.blur()}
-                    />
+            <div className='flex gap-14 justify-between'>
+                <div className='flex gap-14'>
+                    <div>
+                        <label className='font-bold'>Sort by</label>
+                        <select
+                            onChange={e => setSorting(e.target.value)}
+                            className='p-2 border rounded-sm ml-3 outline-none'>
+                            <option value="priceplus" selected={currentSorting == 'priceplus'}>Price to low</option>
+                            <option value="priceminus" selected={currentSorting == 'priceminus'}>Price to high</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className='font-bold'>Show</label>
+                        <input
+                            type="number"
+                            min={1}
+                            className='text-center p-2 border rounded-sm ml-3 outline-none w-20'
+                            onChange={e => setShowCount(e.target.value)}
+                            value={defaultShow}
+                            onWheel={e => e.target.blur()}
+                        />
+                    </div>
                 </div>
                 <div className='flex items-center gap-4' id='paginatebuttons'>
                     {activePage != 0 && <FaArrowLeftLong

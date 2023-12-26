@@ -12,7 +12,9 @@ export const productSlice = createSlice({
                 photo: images.trend1,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'trend'
+                type: 'trend',
+                person: 'women',
+                category: 'caps'
             },
             {
                 id: 2,
@@ -21,7 +23,9 @@ export const productSlice = createSlice({
                 photo: images.trend2,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'trend'
+                type: 'trend',
+                person: 'women',
+                category: 'caps'
             },
             {
                 id: 3,
@@ -30,7 +34,9 @@ export const productSlice = createSlice({
                 photo: images.trend3,
                 title: 'Lorem ipsum',
                 price: 30,
-                type: 'trend'
+                type: 'trend',
+                person: 'men',
+                category: 'sandals'
             },
             {
                 id: 4,
@@ -39,7 +45,9 @@ export const productSlice = createSlice({
                 photo: images.trend2,
                 title: 'Lorem ipsum',
                 price: 25.60,
-                type: 'trend'
+                type: 'trend',
+                person: 'boys',
+                category: 'sandals'
             },
             {
                 id: 5,
@@ -48,7 +56,9 @@ export const productSlice = createSlice({
                 photo: images.trend3,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'trend'
+                type: 'trend',
+                person: 'girls',
+                category: 'coats'
             },
             {
                 id: 6,
@@ -57,7 +67,9 @@ export const productSlice = createSlice({
                 photo: images.trend1,
                 title: 'Lorem ipsum',
                 price: 6.90,
-                type: 'trend'
+                type: 'trend',
+                person: 'men',
+                category: 'coats'
             },
             {
                 id: 7,
@@ -66,7 +78,9 @@ export const productSlice = createSlice({
                 photo: images.trend3,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'trend'
+                type: 'trend',
+                person: 'boys',
+                category: 't-shirts'
             },
             {
                 id: 8,
@@ -75,7 +89,9 @@ export const productSlice = createSlice({
                 photo: images.trend1,
                 title: 'Lorem ipsum',
                 price: 8,
-                type: 'trend'
+                type: 'trend',
+                person: 'girls',
+                category: 't-shirts'
             },
             {
                 id: 9,
@@ -84,7 +100,9 @@ export const productSlice = createSlice({
                 photo: images.trend2,
                 title: 'Lorem ipsum',
                 price: 15.05,
-                type: 'trend'
+                type: 'trend',
+                person: 'women',
+                category: 'sandals'
             },
             {
                 id: 10,
@@ -93,7 +111,9 @@ export const productSlice = createSlice({
                 photo: images.trend1,
                 title: 'Lorem ipsum',
                 price: 180,
-                type: 'trend'
+                type: 'trend',
+                person: 'women',
+                category: 't-shirts'
             },
             {
                 id: 11,
@@ -102,7 +122,9 @@ export const productSlice = createSlice({
                 photo: images.arrival1,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'arrival'
+                type: 'arrival',
+                person: 'men',
+                category: 't-shirts'
             },
             {
                 id: 12,
@@ -111,7 +133,9 @@ export const productSlice = createSlice({
                 photo: images.arrival2,
                 title: 'Lorem ipsum',
                 price: 18.15,
-                type: 'arrival'
+                type: 'arrival',
+                person: 'women',
+                category: 'clothes'
             },
             {
                 id: 13,
@@ -120,7 +144,9 @@ export const productSlice = createSlice({
                 photo: images.arrival3,
                 title: 'Lorem ipsum',
                 price: 30,
-                type: 'arrival'
+                type: 'arrival',
+                person: 'men',
+                category: 'clothes'
             },
             {
                 id: 14,
