@@ -4,6 +4,7 @@ import SizeChart from './SizeChart';
 
 export default function SelectSize({ setSelectedSize, sizes }) {
     const [showChart, setShowChart] = useState(false)
+
     return (
         <div className='relative'>
             {showChart && <SizeChart open={showChart} setOpen={setShowChart} />}

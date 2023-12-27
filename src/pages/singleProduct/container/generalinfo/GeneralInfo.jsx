@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { HiMiniStar, HiOutlineStar } from "react-icons/hi2";
 import SelectSize from './SelectSize';
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { IoHeartOutline } from "react-icons/io5";
+import { addBasketProduct } from '../../../../store/reducers/userReducers';
+import { likeProduct } from '../../../../store/reducers/productReducers';
+import InfoMenus from './InfoMenus';
 
 export default function GeneralInfo() {
   const { productDatabase } = useSelector(state => state.product)
   const [activeImage, setActiveImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState()
-  const data = productDatabase[productDatabase.length - 1]
+  let data = productDatabase[productDatabase.length - 1]
   const [activeColor, setActiveColor] = useState(data?.colors[0])
+  const [productCount, setProductCount] = useState(1)
+
+  const dispatch = useDispatch()
 
   const getNextImage = () => {
     if (activeImage === data.photo.length - 1) {
@@ -27,8 +35,33 @@ export default function GeneralInfo() {
     }
   }
 
+  const addToCart = () => {
+    let addedProduct = {}
+    addedProduct.id = data?.id
+    addedProduct.rating = data?.rating
+    addedProduct.isLiked = data?.isLiked
+    addedProduct.photo = data?.photo
+    addedProduct.title = data?.title
+    addedProduct.price = data?.price
+    addedProduct.discountPercent = data?.discountPercent
+    addedProduct.type = data?.type
+    addedProduct.color = activeColor
+    addedProduct.size = selectedSize
+    addedProduct.count = productCount
+    dispatch(addBasketProduct(addedProduct))
+  }
+
+  const like = () => {
+    dispatch(likeProduct(data.id))
+  }
+
+  useEffect(() => {
+    data = productDatabase[productDatabase.length - 1]
+  }, [productDatabase])
+
   return (
-    <div className='py-8 grid grid-cols-2 gap-20 relative'>
+    <div className='py-8 grid grid-cols-2 gap-20 relative mb-40'>
+      {/* images */}
       <div className='col-span-1'>
         <div className='relative mb-5'>
           <img src={data.photo[activeImage]} alt="product" className='w-full h-full object-contain' />
@@ -55,6 +88,8 @@ export default function GeneralInfo() {
           ))}
         </div>
       </div>
+
+      {/* right side */}
       <div className='col-span-1'>
         <div className='flex items-center justify-between mb-6'>
           <div className='flex gap-8 items-center'>
@@ -108,6 +143,29 @@ export default function GeneralInfo() {
           setSelectedSize={setSelectedSize}
           sizes={data?.sizes}
         />
+        <div className='flex gap-6 mt-8 flex-wrap mb-12'>
+          <input
+            type="number"
+            onWheel={e => e.target.blur()}
+            className='py-3 px-4 outline-none border rounded-sm w-20'
+            min={1}
+            value={productCount}
+            onChange={e => setProductCount(e.target.valueAsNumber)}
+          />
+          <button
+            onClick={addToCart}
+            className='rounded-md bg-primary text-white font-bold px-6 py-2 flex items-center justify-center'>
+            <MdOutlineShoppingCart />
+            <span className='w-fit'>Add to cart</span>
+          </button>
+          <button
+            onClick={like}
+            className={`rounded-md px-6 py-2 font-bold ${data.isLiked ? 'text-white bg-primary' : 'text-primary'} border-primary border flex items-center justify-center transition-colors duration-200`}>
+            <IoHeartOutline />
+            <span>Favorite</span>
+          </button>
+        </div>
+        <InfoMenus />
       </div>
     </div >
   )

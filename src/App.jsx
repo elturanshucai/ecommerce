@@ -14,6 +14,7 @@ function App() {
           <Route index path="/" element={<Home />} />
           <Route path="/:person/:category" element={<Catalog />} />
           <Route path="/:person/:category/:productName" element={<SingleProductPage />} />
+          <Route path="/:productName" element={<SingleProductPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

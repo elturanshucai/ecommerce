@@ -19,7 +19,6 @@ export default function BreadCrumbs() {
             navigate(`${window.location.pathname}?${newQuery}`)
         }
     }
-    console.log(paramsArray)
     return (
         <div className='bg-[#F4F5F6] flex lg:px-40 px-5 h-14 items-center justify-between'>
             <div className='flex items-center'>
