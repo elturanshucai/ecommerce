@@ -6,11 +6,10 @@ import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useSelector } from 'react-redux';
 
-export default function HeaderMain({ setMegaMenu }) {
+export default function HeaderMain({ setMegaMenu, setActiveMenu, activeMenu }) {
     const { productDatabase } = useSelector(state => state.product)
     const { userBasket } = useSelector(state => state.user)
     const [likedProducts, setLikedProducts] = useState([])
-    const [activeMenu, setActiveMenu] = useState(false)
     const handleClick = (e) => {
         setActiveMenu(e.target.id)
         setMegaMenu(true)

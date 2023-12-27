@@ -44,7 +44,7 @@ const accessories = [
     { title: 'Socks & tights', path: '/socks-and-tights' }
 ]
 
-export default function MegaMenu({ setMegaMenu }) {
+export default function MegaMenu({ setMegaMenu, activeMenu }) {
     return (
         <div className='fixed top-[250px] lg:top-[150px] w-full z-40 h-screen overflow-auto border-t'>
             <div className='flex gap-14 bg-white py-5 lg:px-40 px-5'>
@@ -58,19 +58,19 @@ export default function MegaMenu({ setMegaMenu }) {
                     <div className='col-span-2 sm:col-span-1 flex flex-col gap-2'>
                         <h1 className='uppercase font-bold'>CLOTHES</h1>
                         {clothes.map((item, index) => (
-                            <Link to={item.path} key={index}>{item.title}</Link>
+                            <Link to={`/${activeMenu}${item.path}`} key={index} onClick={() => setMegaMenu(false)}>{item.title}</Link>
                         ))}
                     </div>
                     <div className='col-span-2 sm:col-span-1 flex flex-col gap-2'>
                         <h1 className='uppercase font-bold'>SHOES</h1>
                         {shoes.map((item, index) => (
-                            <Link to={item.path} key={index}>{item.title}</Link>
+                            <Link to={`/${activeMenu}${item.path}`} onClick={() => setMegaMenu(false)} key={index}>{item.title}</Link>
                         ))}
                     </div>
                     <div className='col-span-2 sm:col-span-1 flex flex-col gap-2'>
                         <h1 className='uppercase font-bold'>ACCESSORIES</h1>
                         {accessories.map((item, index) => (
-                            <Link to={item.path} key={index}>{item.title}</Link>
+                            <Link to={`/${activeMenu}${item.path}`} onClick={() => setMegaMenu(false)} key={index}>{item.title}</Link>
                         ))}
                     </div>
                 </div>

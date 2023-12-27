@@ -19,6 +19,7 @@ export default function BreadCrumbs() {
             navigate(`${window.location.pathname}?${newQuery}`)
         }
     }
+    console.log(paramsArray)
     return (
         <div className='bg-[#F4F5F6] flex lg:px-40 px-5 h-14 items-center justify-between'>
             <div className='flex items-center'>
@@ -26,7 +27,7 @@ export default function BreadCrumbs() {
                     <IoHomeOutline />
                 </Link>
                 {paramsArray.map((item, index) => (
-                    <div className='flex items-center' key={index}>
+                    item && <div className='flex items-center' key={index}>
                         <IoChevronForwardOutline className='text-gray-400 mx-2' />
                         <span className={`${index === paramsArray.length - 1 && 'text-gray-400'}`}>{item}</span>
                     </div>

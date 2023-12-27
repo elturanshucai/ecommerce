@@ -7,6 +7,7 @@ import { likeProduct } from '../store/reducers/productReducers';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { addBasketProduct } from '../store/reducers/userReducers';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard({ index, item, className, imageClass = 'max-w-[285px]', type }) {
     const dispatch = useDispatch()
@@ -111,9 +112,13 @@ export default function ProductCard({ index, item, className, imageClass = 'max-
                     <IoIosArrowForward className='cursor-pointer' onClick={getNextImage} />
                 </div>
             }
-            <img src={type === 'discount' ? item.photo[activeImage] : item.photo} alt="product" className={`max-h-80 h-80 w-full rounded-md ${imageClass}`} />
+            <Link to={item.title}>
+                <img src={type === 'discount' ? item.photo[activeImage] : item.photo} alt="product" className={`max-h-80 h-80 w-full rounded-md ${imageClass}`} />
+            </Link>
             <div className='p-4 bg-transparent'>
-                <p className='text-gray-800 text-lg truncate'>{item.title}</p>
+                <Link to={item.title}>
+                    <p className='text-gray-800 text-lg truncate'>{item.title}</p>
+                </Link>
 
                 {type === 'discount' ?
                     <>

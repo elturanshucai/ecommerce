@@ -46,6 +46,11 @@ import brandLogo5 from './assets/about/brand-logo4.png'
 import brandLogo6 from './assets/about/brand-logo5.png'
 import subscribeImg from './assets/subscribeImg.png'
 import megaMenuImg from './assets/megaMenu.png'
+import single1 from './assets/singleProduct/single1.png'
+import single2 from './assets/singleProduct/single2.png'
+import single3 from './assets/singleProduct/single3.png'
+import single4 from './assets/singleProduct/single4.png'
+import single5 from './assets/singleProduct/single5.png'
 
 const images = {
     usa,
@@ -95,7 +100,12 @@ const images = {
     brandLogo5,
     brandLogo6,
     subscribeImg,
-    megaMenuImg
+    megaMenuImg,
+    single1,
+    single2,
+    single3,
+    single4,
+    single5
 }
 
 export default images;

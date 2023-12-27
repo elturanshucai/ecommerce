@@ -31,7 +31,7 @@ export default function Catalog() {
 
     useEffect(() => {
         getData()
-    }, [sorting, showCount, activePage])
+    }, [sorting, showCount, activePage, productDatabase])
     return (
         <MainLayout>
             <BreadCrumbs />

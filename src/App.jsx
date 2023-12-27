@@ -3,6 +3,7 @@ import Home from "./pages/home/Home"
 import { Provider } from "react-redux"
 import store from "./store/store"
 import Catalog from "./pages/catalog/Catalog"
+import SingleProductPage from "./pages/singleProduct/SingleProductPage"
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<Home />} />
-          <Route path="/women/:category" element={<Catalog />} />
+          <Route path="/:person/:category" element={<Catalog />} />
+          <Route path="/:person/:category/:productName" element={<SingleProductPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

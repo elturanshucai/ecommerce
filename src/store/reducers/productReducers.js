@@ -230,6 +230,18 @@ export const productSlice = createSlice({
                 type: 'discount',
                 colors: ['red']
             },
+            {
+                id: 22,
+                rating: 4,
+                isLiked: false,
+                photo: [images.single1, images.single2, images.single3, images.single4],
+                title: 'Basic hooded sweatshirt in pink',
+                price: 43,
+                discountPercent: 15,
+                type: 'discount',
+                colors: ['red', 'pink'],
+                sizes: ['s', 'm', 'l', 'xl', '2xl']
+            }
         ]
     },
     reducers: {
