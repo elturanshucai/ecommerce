@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { HiMiniStar, HiOutlineStar } from "react-icons/hi2";
 import SelectSize from './SelectSize';
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -8,6 +7,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { addBasketProduct } from '../../../../store/reducers/userReducers';
 import { likeProduct } from '../../../../store/reducers/productReducers';
 import InfoMenus from './InfoMenus';
+import ProductImageSlider from './ProductImageSlider';
 
 export default function GeneralInfo() {
   const { productDatabase } = useSelector(state => state.product)
@@ -18,22 +18,6 @@ export default function GeneralInfo() {
   const [productCount, setProductCount] = useState(1)
 
   const dispatch = useDispatch()
-
-  const getNextImage = () => {
-    if (activeImage === data.photo.length - 1) {
-      setActiveImage(0)
-    } else {
-      setActiveImage(activeImage + 1)
-    }
-  }
-
-  const getPrevImage = () => {
-    if (activeImage === 0) {
-      setActiveImage(data.photo.length - 1)
-    } else {
-      setActiveImage(activeImage - 1)
-    }
-  }
 
   const addToCart = () => {
     let addedProduct = {}
@@ -62,32 +46,11 @@ export default function GeneralInfo() {
   return (
     <div className='py-8 grid grid-cols-2 gap-20 relative mb-40'>
       {/* images */}
-      <div className='col-span-1'>
-        <div className='relative mb-5'>
-          <img src={data.photo[activeImage]} alt="product" className='w-full h-full object-contain' />
-          <div className='absolute top-1/2 flex justify-between w-full px-8'>
-            <button
-              onClick={getPrevImage}
-              className='flex items-center justify-center bg-white rounded-full w-12 h-12'>
-              <BsArrowLeft />
-            </button>
-            <button
-              onClick={getNextImage}
-              className='flex items-center justify-center bg-white rounded-full w-12 h-12'>
-              <BsArrowRight />
-            </button>
-          </div>
-        </div>
-        <div className='flex gap-5'>
-          {data?.photo?.map((item, index) => (
-            <div
-              onClick={() => setActiveImage(index)}
-              className={`rounded-md w-24 h-24 overflow-hidden ${index === activeImage && 'border border-primary'}`}>
-              <img src={item} alt="image" className='w-full h-full object-contain' />
-            </div>
-          ))}
-        </div>
-      </div>
+      <ProductImageSlider
+        activeImage={activeImage}
+        imageList={data?.photo}
+        setActiveImage={setActiveImage}
+      />
 
       {/* right side */}
       <div className='col-span-1'>
