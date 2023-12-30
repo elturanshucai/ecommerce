@@ -14,7 +14,18 @@ export const userSlice = createSlice({
             state.currentUser = null
         },
         addBasketProduct: (state, { payload }) => {
-            state.userBasket = [...state.userBasket, payload]
+            let product = state.userBasket.filter(item => (item.id === payload.id) && (item.color === payload.color) && (item.size === payload.size))[0]
+            if (product) {
+                if (product.size === payload.size && product.color === payload.color) {
+                    state.userBasket.map(item => {
+                        if (item.id === product.id) item.count += 1
+                    })
+                } else {
+                    state.userBasket = [...state.userBasket, payload]
+                }
+            } else {
+                state.userBasket = [...state.userBasket, payload]
+            }
         },
         removeBasketProduct: (state, { payload }) => {
             state.userBasket = state.userBasket.filter((_, index) => index != payload)

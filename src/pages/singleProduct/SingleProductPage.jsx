@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MainLayout from '../../components/MainLayout'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import Subscribe from '../home/container/subscribe/Subscribe'
@@ -6,13 +6,20 @@ import { useParams } from 'react-router-dom'
 import GeneralInfo from './container/generalinfo/GeneralInfo'
 import ProductDetails from './container/details/ProductDetails'
 import ProductReviews from './container/reviews/ProductReviews'
+import { useSelector } from 'react-redux'
 
 export default function SingleProductPage() {
     const { productName } = useParams()
     const [activeButton, setActiveButton] = useState('info')
+    const { productDatabase } = useSelector(state => state.product)
+    let product = productDatabase.filter(item => item.id === 22)[0]
     const handleChangeButton = (e) => {
         setActiveButton(e.target.id)
     }
+
+    useEffect(() => {
+        product = productDatabase.filter(item => item.id === 22)[0]
+    }, [productDatabase])
     return (
         <MainLayout>
             <BreadCrumbs />
@@ -44,12 +51,12 @@ export default function SingleProductPage() {
                         className={`transition-all duration-200 relative ${activeButton === 'review' ? 'text-primary border-primary border' : 'text-gray-400'} px-5 py-2 rounded-md `}
                         onClick={handleChangeButton}
                     >
-                        Reviews <span id='review' className='absolute text-xs top-2 right-2'>12</span>
+                        Reviews <span id='review' className='absolute text-xs top-2 right-2'>14</span>
                     </button>
                 </div>
-                {activeButton === 'info' && <GeneralInfo />}
-                {activeButton === 'detail' && <ProductDetails />}
-                {activeButton === 'review' && <ProductReviews />}
+                {activeButton === 'info' && <GeneralInfo product={product} />}
+                {activeButton === 'detail' && <ProductDetails product={product} />}
+                {activeButton === 'review' && <ProductReviews product={product} />}
             </main>
             <Subscribe />
         </MainLayout>

@@ -2,12 +2,9 @@ import React from 'react'
 import HRDivider from '../../../../components/HRDivider'
 import { TbWashHand, TbIroningOff, TbBleachOff, TbWashTumbleOff } from "react-icons/tb";
 import ProductCard from '../../../../components/ProductCard';
-import images from '../../../../images';
-import { useSelector } from 'react-redux';
 
-export default function ProductDetails() {
-  const { productDatabase } = useSelector(state => state.product)
-  const product = productDatabase.filter(item => item.id === 22)[0]
+export default function ProductDetails({ product }) {
+
   const productDetailData = [
     'Brand: Jordan',
     'Color: gray / red / yellow',
