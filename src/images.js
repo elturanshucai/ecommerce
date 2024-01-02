@@ -54,6 +54,9 @@ import single5 from './assets/singleProduct/single5.png'
 import mastercard from './assets/payment/mastercard.png'
 import paypal from './assets/payment/paypal.png'
 import visa from './assets/payment/visa.png'
+import look from './assets/looked/look.png'
+import look1 from './assets/looked/look1.png'
+import look2 from './assets/looked/look2.png'
 
 const images = {
     usa,
@@ -111,7 +114,10 @@ const images = {
     single5,
     mastercard,
     visa,
-    paypal
+    paypal,
+    look,
+    look1,
+    look2
 }
 
 export default images;

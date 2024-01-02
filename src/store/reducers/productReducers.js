@@ -241,6 +241,25 @@ export const productSlice = createSlice({
                 type: 'discount',
                 colors: ['red', 'pink'],
                 sizes: ['s', 'm', 'l', 'xl', '2xl']
+            },
+            {
+                id: 23,
+                rating: 4,
+                isLiked: false,
+                photo: images.look1,
+                title: 'short',
+                price: 24,
+                discountPercent: 20,
+                type: 'discount',
+                sizes: ['30', '32', '34']
+            },
+            {
+                id: 24,
+                rating: null,
+                isLiked: false,
+                photo: images.look2,
+                title: 'Trenchcoat',
+                price: 45.20
             }
         ]
     },
