@@ -9,6 +9,7 @@ import ProductReviews from './container/reviews/ProductReviews'
 import { useSelector } from 'react-redux'
 import YourLook from './container/yourLook/YourLook'
 import Interested from './container/interested/Interested'
+import RecentlyView from './container/recentlyView/RecentlyView'
 
 export default function SingleProductPage() {
     const { productName } = useParams()
@@ -62,6 +63,7 @@ export default function SingleProductPage() {
             </main>
             <YourLook />
             <Interested />
+            <RecentlyView />
             <Subscribe />
         </MainLayout>
     )
