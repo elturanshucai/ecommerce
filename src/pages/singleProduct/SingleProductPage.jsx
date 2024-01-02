@@ -8,6 +8,7 @@ import ProductDetails from './container/details/ProductDetails'
 import ProductReviews from './container/reviews/ProductReviews'
 import { useSelector } from 'react-redux'
 import YourLook from './container/yourLook/YourLook'
+import Interested from './container/interested/Interested'
 
 export default function SingleProductPage() {
     const { productName } = useParams()
@@ -60,6 +61,7 @@ export default function SingleProductPage() {
                 {activeButton === 'review' && <ProductReviews product={product} />}
             </main>
             <YourLook />
+            <Interested />
             <Subscribe />
         </MainLayout>
     )
