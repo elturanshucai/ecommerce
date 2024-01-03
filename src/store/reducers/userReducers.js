@@ -29,8 +29,15 @@ export const userSlice = createSlice({
         },
         removeBasketProduct: (state, { payload }) => {
             state.userBasket = state.userBasket.filter((_, index) => index != payload)
+        },
+        basketItemChangeCount: (state, { payload }) => {
+            for (let i = 0; i < state.userBasket.length; i++) {
+                if (i === payload.index) {
+                    state.userBasket[i].count = payload.count
+                }
+            }
         }
     }
 })
-export const { setUser, addBasketProduct, logoutUser, removeBasketProduct } = userSlice.actions
+export const { setUser, addBasketProduct, logoutUser, removeBasketProduct, basketItemChangeCount } = userSlice.actions
 export default userSlice.reducer

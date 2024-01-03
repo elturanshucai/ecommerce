@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#17696A'
+        primary: '#17696A',
+        modal: 'rgba(0,0,0, 0.5)'
       },
       screens: {
         'vsm': '400px',
