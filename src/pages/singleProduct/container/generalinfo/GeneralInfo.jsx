@@ -14,6 +14,7 @@ export default function GeneralInfo({ product }) {
   const [selectedSize, setSelectedSize] = useState()
   const [activeColor, setActiveColor] = useState(product?.colors[0])
   const [productCount, setProductCount] = useState(1)
+  const [buttonPress, setButtonPress] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -31,6 +32,14 @@ export default function GeneralInfo({ product }) {
     addedProduct.size = selectedSize
     addedProduct.count = productCount
     dispatch(addBasketProduct(addedProduct))
+  }
+
+  const clickStartButton = () => {
+    setButtonPress(true)
+  }
+
+  const clickEndButton = () => {
+    setButtonPress(false)
   }
 
   const like = () => {
@@ -111,7 +120,9 @@ export default function GeneralInfo({ product }) {
           />
           <button
             onClick={addToCart}
-            className='rounded-md bg-primary text-white font-bold px-6 py-2 flex items-center justify-center'>
+            onMouseDown={clickStartButton}
+            onMouseUp={clickEndButton}
+            className={`rounded-md bg-primary text-white font-bold px-6 py-2 flex items-center justify-center ${buttonPress ? 'scale-90 opacity-80' : 'scale100'} transition-all`}>
             <MdOutlineShoppingCart />
             <span className='w-fit'>Add to cart</span>
           </button>
