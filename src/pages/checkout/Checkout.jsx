@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IoMdHeartEmpty } from 'react-icons/io'
 import { basketItemChangeCount, removeBasketProduct } from '../../store/reducers/userReducers';
 import { likeProduct } from '../../store/reducers/productReducers';
+import ShippingBilling from './container/Shipping&Billing';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
@@ -115,8 +116,11 @@ export default function Checkout() {
                                 {index < userBasket.length - 1 && <HRDivider />}
                             </>
                         ))}
-                        <div className='bg-[#F4F5F6] flex justify-end p-6 font-bold text-lg border-t'>Subtotal:{" "}{subtotal}</div>
+                        <div className='bg-[#F4F5F6] flex justify-end p-6 font-bold text-lg border-t'>Subtotal:{" $"}{subtotal}</div>
                     </div>
+                    <HRDivider className='my-8' />
+                    <ShippingBilling />
+                    <HRDivider className='my-8' />
                 </div>
                 <div className='col-span-1'></div>
             </main>

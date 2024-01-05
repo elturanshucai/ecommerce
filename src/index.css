@@ -18,7 +18,11 @@
     background-color: rgb(221, 221, 221);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: rgb(46, 46, 46);
     border-radius: 4px;
+}
+
+.select .css-art2ul-ValueContainer2 {
+    padding: 8px 12px;
 }
