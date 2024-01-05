@@ -9,6 +9,7 @@ import { IoMdHeartEmpty } from 'react-icons/io'
 import { basketItemChangeCount, removeBasketProduct } from '../../store/reducers/userReducers';
 import { likeProduct } from '../../store/reducers/productReducers';
 import ShippingBilling from './container/Shipping&Billing';
+import ShippingMethod from './container/ShippingMethod';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
@@ -120,6 +121,8 @@ export default function Checkout() {
                     </div>
                     <HRDivider className='my-8' />
                     <ShippingBilling />
+                    <HRDivider className='my-8' />
+                    <ShippingMethod />
                     <HRDivider className='my-8' />
                 </div>
                 <div className='col-span-1'></div>
