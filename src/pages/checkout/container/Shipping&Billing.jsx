@@ -65,7 +65,7 @@ export default function ShippingBilling() {
         getCities()
     }, [data.country])
     return (
-        <div className='pt-8'>
+        <div>
             <h1 className='text-2xl font-bold mb-6'>2.Shipping & Billing Address</h1>
             <form className='grid grid-cols-2 mb-8 gap-6'>
                 <div className='col-span-1 flex flex-col gap-6'>

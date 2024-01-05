@@ -10,6 +10,7 @@ import { basketItemChangeCount, removeBasketProduct } from '../../store/reducers
 import { likeProduct } from '../../store/reducers/productReducers';
 import ShippingBilling from './container/Shipping&Billing';
 import ShippingMethod from './container/ShippingMethod';
+import PaymentMethod from './container/PaymentMethod';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
@@ -123,6 +124,8 @@ export default function Checkout() {
                     <ShippingBilling />
                     <HRDivider className='my-8' />
                     <ShippingMethod />
+                    <HRDivider className='my-8' />
+                    <PaymentMethod />
                     <HRDivider className='my-8' />
                 </div>
                 <div className='col-span-1'></div>

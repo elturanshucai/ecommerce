@@ -32,7 +32,7 @@ export const userSlice = createSlice({
         },
         basketItemChangeCount: (state, { payload }) => {
             for (let i = 0; i < state.userBasket.length; i++) {
-                if (i === payload.index) {
+                if (i === payload.index && payload.count > 0 && payload.count % 1 === 0) {
                     state.userBasket[i].count = payload.count
                 }
             }
