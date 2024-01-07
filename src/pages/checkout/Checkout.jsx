@@ -11,6 +11,7 @@ import { likeProduct } from '../../store/reducers/productReducers';
 import ShippingBilling from './container/Shipping&Billing';
 import ShippingMethod from './container/ShippingMethod';
 import PaymentMethod from './container/PaymentMethod';
+import AdditionalInfo from './container/AdditionalInfo';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
@@ -49,7 +50,7 @@ export default function Checkout() {
     return (
         <MainLayout>
             <BreadCrumbs />
-            <main className='grid grid-cols-3 px-5 lg:px-40'>
+            <main className='grid grid-cols-3 px-5 lg:px-40 pb-44'>
                 <div className='col-span-2'>
                     <div className='flex items-center justify-between my-8'>
                         <p className='text-5xl font-extrabold'>Checkout</p>
@@ -127,6 +128,7 @@ export default function Checkout() {
                     <HRDivider className='my-8' />
                     <PaymentMethod />
                     <HRDivider className='my-8' />
+                    <AdditionalInfo />
                 </div>
                 <div className='col-span-1'></div>
             </main>
