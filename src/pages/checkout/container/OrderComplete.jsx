@@ -12,6 +12,7 @@ export default function OrderComplete({ subtotal, shippingCost }) {
     const [tax, setTax] = useState(6)
     const [orderTotal, setOrderTotal] = useState(0)
     const [promoCode, setPromoCode] = useState('')
+    const [press, setPress] = useState(false)
 
     const discountGenerator = () => {
         let code = promoCodes.filter(item => item.code === promoCode)[0]
@@ -85,7 +86,13 @@ export default function OrderComplete({ subtotal, shippingCost }) {
                     </div>
                 </div>
             </div>
-            <button className='w-full rounded-sm bg-primary text-white font-bold h-[52px] px-10'>Complete order</button>
+            <button
+                onMouseDown={() => setPress(true)}
+                onMouseUp={() => setPress(false)}
+                className={`w-full rounded-sm bg-primary transition-all text-white font-bold h-[52px] px-10 ${press ? 'opacity-75 scale-95' : 'opacity-100 scale-100'}`}
+            >
+                Complete order
+            </button>
         </div>
     )
 }
