@@ -40,7 +40,7 @@ export default function OrderComplete({ subtotal, shippingCost }) {
     }, [subtotal])
     return (
         <div>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 mb-6'>
                 <label htmlFor="promocode">Apply a promo code</label>
                 <div className='flex mb-6'>
                     <input
@@ -85,6 +85,7 @@ export default function OrderComplete({ subtotal, shippingCost }) {
                     </div>
                 </div>
             </div>
+            <button className='w-full rounded-sm bg-primary text-white font-bold h-[52px] px-10'>Complete order</button>
         </div>
     )
 }
