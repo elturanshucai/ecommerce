@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ShippingMethod() {
+export default function ShippingMethod({ setShippingCost }) {
     return (
         <div>
             <h1 className='font-bold text-2xl mb-6'>3. Shipping Method</h1>
@@ -10,9 +10,10 @@ export default function ShippingMethod() {
                         <input
                             type="radio"
                             name='ship_method'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => setShippingCost(e.target.value)}
                             className='accent-primary w-4 h-4'
                             id='1'
+                            value='25.00'
                         />
                         <div>
                             <label htmlFor="1" className='block font-bold leading-none'>Courier to your address</label>
@@ -27,9 +28,10 @@ export default function ShippingMethod() {
                         <input
                             type="radio"
                             name='ship_method'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => setShippingCost(e.target.value)}
                             className='accent-primary w-4 h-4'
                             id='2'
+                            value='0'
                         />
                         <div>
                             <label htmlFor="2" className='block font-bold leading-none'>Pick up from store</label>
@@ -44,9 +46,10 @@ export default function ShippingMethod() {
                         <input
                             type="radio"
                             name='ship_method'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => setShippingCost(e.target.value)}
                             className='accent-primary w-4 h-4'
                             id='3'
+                            value='10.00'
                         />
                         <div>
                             <label htmlFor="3" className='block font-bold leading-none'>UPS Ground Shipping</label>
@@ -61,9 +64,10 @@ export default function ShippingMethod() {
                         <input
                             type="radio"
                             name='ship_method'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => setShippingCost(e.target.value)}
                             className='accent-primary w-4 h-4'
                             id='4'
+                            value='8.50'
                         />
                         <div>
                             <label htmlFor="4" className='block font-bold leading-none'>Pick up at Createx Locker</label>
@@ -78,9 +82,10 @@ export default function ShippingMethod() {
                         <input
                             type="radio"
                             name='ship_method'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => setShippingCost(e.target.value)}
                             className='accent-primary w-4 h-4'
                             id='5'
+                            value='15.00'
                         />
                         <div>
                             <label htmlFor="5" className='block font-bold leading-none'>Createx Global Export</label>

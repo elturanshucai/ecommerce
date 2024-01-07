@@ -12,10 +12,12 @@ import ShippingBilling from './container/Shipping&Billing';
 import ShippingMethod from './container/ShippingMethod';
 import PaymentMethod from './container/PaymentMethod';
 import AdditionalInfo from './container/AdditionalInfo';
+import OrderComplete from './container/OrderComplete';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
     const [subtotal, setSubTotal] = useState(0)
+    const [shippingCost, setShippingCost] = useState(0)
     const dispatch = useDispatch()
 
     const moveToLiked = (itemId, index) => {
@@ -50,10 +52,10 @@ export default function Checkout() {
     return (
         <MainLayout>
             <BreadCrumbs />
-            <main className='grid grid-cols-3 px-5 lg:px-40 pb-44'>
+            <main className='grid grid-cols-3 px-5 lg:px-40 pb-44 pt-8 gap-20'>
                 <div className='col-span-2'>
-                    <div className='flex items-center justify-between my-8'>
-                        <p className='text-5xl font-extrabold'>Checkout</p>
+                    <div className='flex items-center justify-between'>
+                        <p className='text-5xl font-extrabold mb-8'>Checkout</p>
                         <Link to="/" className='underline text-primary font-bold'>Back to shopping</Link>
                     </div>
                     <div className='rounded-md p-5 flex gap-4 items-center text-primary border border-primary bg-primary bg-opacity-5'>
@@ -124,13 +126,18 @@ export default function Checkout() {
                     <HRDivider className='my-8' />
                     <ShippingBilling />
                     <HRDivider className='my-8' />
-                    <ShippingMethod />
+                    <ShippingMethod setShippingCost={setShippingCost} />
                     <HRDivider className='my-8' />
                     <PaymentMethod />
                     <HRDivider className='my-8' />
                     <AdditionalInfo />
                 </div>
-                <div className='col-span-1'></div>
+                <div className='col-span-1'>
+                    <OrderComplete
+                        subtotal={subtotal}
+                        shippingCost={shippingCost}
+                    />
+                </div>
             </main>
         </MainLayout>
     )
