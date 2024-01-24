@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 import YourLook from './container/yourLook/YourLook'
 import Interested from './container/interested/Interested'
 import RecentlyView from './container/recentlyView/RecentlyView'
+import { Helmet } from 'react-helmet'
 
 export default function SingleProductPage() {
     const { productName } = useParams()
@@ -25,6 +26,10 @@ export default function SingleProductPage() {
     }, [productDatabase])
     return (
         <MainLayout>
+            <Helmet>
+                <title>Product - {productName}</title>
+                <meta name="description" content="Product detail page in Createx Shop." />
+            </Helmet>
             <BreadCrumbs />
             <main className='lg:px-40 px-5 mx-auto py-8'>
                 <div className='flex justify-between items-center mb-10'>

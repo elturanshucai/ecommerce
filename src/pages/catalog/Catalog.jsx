@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import ProductCard from '../../components/ProductCard';
 import Filter from './container/Filter';
 import Subscribe from '../home/container/subscribe/Subscribe';
+import { Helmet } from 'react-helmet';
 
 export default function Catalog() {
     const [showFilters, setShowFilters] = useState(true)
@@ -34,6 +35,10 @@ export default function Catalog() {
     }, [sorting, showCount, activePage, productDatabase])
     return (
         <MainLayout>
+            <Helmet>
+                <title>Catalog</title>
+                <meta name="description" content="Select your favorite catalog in Createx Shop" />
+            </Helmet>
             <BreadCrumbs />
             <main className='lg:px-40 px-5 py-8'>
                 <div className='flex gap-14 justify-between mb-8'>

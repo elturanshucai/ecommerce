@@ -13,6 +13,7 @@ import ShippingMethod from './container/ShippingMethod';
 import PaymentMethod from './container/PaymentMethod';
 import AdditionalInfo from './container/AdditionalInfo';
 import OrderComplete from './container/OrderComplete';
+import { Helmet } from 'react-helmet';
 
 export default function Checkout() {
     const { userBasket } = useSelector(state => state.user)
@@ -51,6 +52,11 @@ export default function Checkout() {
     }, [userBasket])
     return (
         <MainLayout>
+            <Helmet>
+                <title>Checkout</title>
+                <meta name="description" content="Pay for your orders." />
+                <link rel="canonical" href="/checkout" />
+            </Helmet>
             <BreadCrumbs />
             <main className='grid grid-cols-3 px-5 lg:px-40 pb-44 pt-8 gap-20'>
                 <div className='col-span-2'>

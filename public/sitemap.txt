@@ -1,0 +1,5 @@
+https://createxshop.netlify.app/
+https://createxshop.netlify.app/checkout
+https://createxshop.netlify.app/:person/:category
+https://createxshop.netlify.app/:person/:category/:productName
+https://createxshop.netlify.app/:productName
