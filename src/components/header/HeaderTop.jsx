@@ -15,7 +15,7 @@ export default function HeaderTop({ hamburger }) {
                 <Link to='/'>Contacts</Link>
             </div>
             <div className='hidden sm:flex flex-col items-center gap-2 md:flex-row'>
-                <img src={images.usa} className='bg-contain w-5 h-3' />
+                <img src={images.usa} className='bg-contain w-5 h-3' alt='currency' />
                 <p className='flex items-center cursor-pointer'>
                     <span>ENG / ${" "}</span>
                     <IoIosArrowDown />
@@ -34,7 +34,7 @@ export default function HeaderTop({ hamburger }) {
                 <Link to='/'>Blog</Link>
                 <Link to='/'>Contacts</Link>
                 <p className='flex items-center cursor-pointer gap-1'>
-                    <img src={images.usa} className='bg-contain w-5 h-3' />
+                    <img src={images.usa} className='bg-contain w-5 h-3' alt='currency' />
                     <span>ENG / ${" "}</span>
                     <IoIosArrowDown />
                 </p>
